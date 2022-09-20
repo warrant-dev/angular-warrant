@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable, map } from 'rxjs';
+import { Warrant } from './warrant';
 import { WarrantService } from './warrant.service';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class WarrantGuard implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let op = route.data["op"] as string;
-    let warrants = route.data["warrants"] as Array<any>;
+    let warrants = route.data["warrants"] as Array<Warrant>;
 
     return this.warrantService
       .isAuthorized(op, warrants)
@@ -26,7 +27,7 @@ export class WarrantGuard implements CanActivate, CanActivateChild {
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let op = childRoute.data["op"] as string;
-    let warrants = childRoute.data["warrants"] as Array<any>;
+    let warrants = childRoute.data["warrants"] as Array<Warrant>;
 
     return this.warrantService
       .isAuthorized(op, warrants)

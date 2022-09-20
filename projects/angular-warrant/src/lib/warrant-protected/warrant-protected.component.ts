@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Warrant } from '../warrant';
 import { WarrantService } from '../warrant.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { WarrantService } from '../warrant.service';
 export class WarrantProtectedComponent implements OnInit {
   isAuthorized: boolean = false;
   @Input() op: string = '';
-  @Input() warrants: Array<any> = [];
+  @Input() warrants: Array<Warrant> = [];
 
   constructor(
     private warrantService: WarrantService,
