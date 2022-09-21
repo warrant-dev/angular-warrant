@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Warrant } from '../warrant';
 import { WarrantService } from '../warrant.service';
 import { WarrantCheck } from '@warrantdev/warrant-js';
 

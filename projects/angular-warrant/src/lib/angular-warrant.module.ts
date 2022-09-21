@@ -5,6 +5,7 @@ import { WarrantConfiguration } from './warrant.config';
 import { WarrantConfigurationService } from './warrant.config.token';
 import { WarrantProtectedComponent } from './warrant-protected/warrant-protected.component';
 import { WarrantGuard } from './warrant.guard';
+import { WarrantService } from './warrant.service';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ export class AngularWarrantModule {
         {
           provide: WarrantConfigurationService,
           useValue: config,
-        }
+        },
+        WarrantService
       ]
     }
   }
