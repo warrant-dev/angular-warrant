@@ -1,6 +1,7 @@
 # @warrantdev/angular-warrant
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+[![npm](https://img.shields.io/npm/v/@warrantdev/angular-warrant)](https://www.npmjs.com/package/@warrantdev/angular-warrant)
+[![Slack](https://img.shields.io/badge/slack-join-brightgreen)](https://join.slack.com/t/warrantcommunity/shared_invite/zt-12g84updv-5l1pktJf2bI5WIKN4_~f4w)
 
 ## Overview
 
