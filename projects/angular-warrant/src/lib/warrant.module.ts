@@ -20,10 +20,10 @@ import { WarrantService } from './warrant.service';
     WarrantProtectedComponent,
   ]
 })
-export class AngularWarrantModule {
-  static forRoot(config: WarrantConfiguration): ModuleWithProviders<AngularWarrantModule> {
+export class WarrantModule {
+  static forRoot(config: WarrantConfiguration): ModuleWithProviders<WarrantModule> {
     return {
-      ngModule: AngularWarrantModule,
+      ngModule: WarrantModule,
       providers: [
         WarrantGuard,
         {

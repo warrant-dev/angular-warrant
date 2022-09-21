@@ -15,14 +15,14 @@ npm install @warrantdev/angular-warrant
 ```
 
 ## Usage
-To start using the SDK in your application, import `AngularWarrantModule` and configure it with your client key:
+To start using the SDK in your application, import `WarrantModule` and configure it with your client key:
 ```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import the module from the SDK
-import { AngularWarrantModule } from 'angular-warrant';
+import { WarrantModule } from 'angular-warrant';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +30,7 @@ import { AngularWarrantModule } from 'angular-warrant';
     BrowserModule,
 
     // Import the module into the application, with configuration
-    AngularWarrantModule.forRoot({
+    WarrantModule.forRoot({
       clientKey: "client_test_f5dsKVeYnVSLHGje44zAygqgqXiLJBICbFzCiAg1E=",
     }),
   ],
@@ -99,30 +99,21 @@ export class ProductListComponent {
       price: 799,
       description: 'A large phone with one of the best screens',
       warrantCheck: {
+        op: "anyOf",
         warrants: [
           {
             objectType: 'role',
             objectId: 'owner',
             relation: 'member',
           },
-        ],
-      }
-    },
-    {
-      id: 2,
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras',
-      warrantCheck: {
-        warrants: [
           {
-            objectType: 'role',
-            objectId: 'owner',
-            relation: 'member',
+            objectType: 'item',
+            objectId: 'phone_xl',
+            relation: 'viewer',
           },
         ],
       }
-    },
+    }
   ];
 }
 ```
@@ -186,7 +177,7 @@ For more information on how to use the Warrant API, please refer to the
 This package includes TypeScript declarations for Warrant.
 
 Note that we may release new [minor and patch](https://semver.org/) versions of
-`@warrantdev/vue-warrant` with small but backwards-incompatible fixes to the type
+`@warrantdev/angular-warrant` with small but backwards-incompatible fixes to the type
 declarations. These changes will not affect Warrant itself.
 
 ## Warrant Documentation

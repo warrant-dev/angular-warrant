@@ -3,7 +3,7 @@
  */
 
 export * from './lib/warrant.config';
-export * from './lib/angular-warrant.module';
+export * from './lib/warrant.module';
 
 export * from './lib/warrant-protected/warrant-protected.component';
 export * from './lib/warrant.guard';

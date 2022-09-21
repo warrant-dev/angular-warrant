@@ -20,8 +20,7 @@ export class WarrantService {
       throw new Error("No session token provided to Warrant. You may have forgotten to call setSessionToken with a valid session token to finish initializing Warrant.");
     }
 
-    const isAuthorized = await new WarrantClient(this.warrantConfiguration.clientKey, this.sessionToken).isAuthorized(warrantCheck);
-    return isAuthorized;
+    return await new WarrantClient(this.warrantConfiguration.clientKey, this.sessionToken).isAuthorized(warrantCheck);
   }
 
   getSessionToken() {
