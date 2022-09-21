@@ -16,7 +16,7 @@ npm install @warrantdev/angular-warrant
 
 ## Usage
 To start using the SDK in your application, import `AngularWarrantModule` and configure it with your client key:
-```
+```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -44,7 +44,7 @@ export class AppModule {}
 In order to finish initializing the library and begin performing access checks in your app, you must provide a server-generated session token and set it using the `setSessionToken` method. Otherwise requests from your Angular application will be denied by the Warrant API.
 
 Set the session token using the `setSessionToken` method:
-```
+```javascript
 // login.component.ts
 export class LoginComponent {
     onSubmit() {
@@ -64,7 +64,7 @@ export class LoginComponent {
 ### `WarrantProtectedComponent`
 `WarrantProtectedComponent` is a utility component you can wrap around markup or components that should only be accessible to users with certain privileges. It only renders the components it wraps if the user has the given warrant.
 
-```
+```html
 // product-list.component.html
 <div *ngFor="let product of products">
   <h3>
@@ -84,7 +84,7 @@ export class LoginComponent {
 </div>
 ```
 
-```
+```javascript
 // product-list.component.ts
 @Component({
   selector: 'app-product-list',
