@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Warrant } from '../warrant';
 import { WarrantService } from '../warrant.service';
+import { WarrantCheck } from '@warrantdev/warrant-js';
 
 @Component({
   selector: 'warrant-protected-component',
@@ -9,8 +10,7 @@ import { WarrantService } from '../warrant.service';
 })
 export class WarrantProtectedComponent implements OnInit {
   isAuthorized: boolean = false;
-  @Input() op: string = '';
-  @Input() warrants: Array<Warrant> = [];
+  @Input() warrantCheck: WarrantCheck = { warrants: [] };
 
   constructor(
     private warrantService: WarrantService,
@@ -18,9 +18,9 @@ export class WarrantProtectedComponent implements OnInit {
 
   ngOnInit(): void {
     this.warrantService
-      .isAuthorized(this.op, this.warrants)
-      .subscribe((resp) => {
-        this.isAuthorized = resp.result === 'Authorized';
+      .isAuthorized(this.warrantCheck)
+      .then((result) => {
+        this.isAuthorized = result;
       });
   }
 }
