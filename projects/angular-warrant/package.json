@@ -4,6 +4,7 @@
   "description": "Angular components for Warrant",
   "author": "Warrant <hello@warrant.dev> (https://warrant.dev)",
   "license": "MIT",
+  "homepage": "https://github.com/warrant-dev/angular-warrant#readme",
   "peerDependencies": {
     "@angular/common": "^14.2.0",
     "@angular/core": "^14.2.0"
