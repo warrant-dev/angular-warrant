@@ -1,7 +1,6 @@
 {
-  "name": "@warrantdev/angular-warrant",
-  "version": "0.1.0",
-  "description": "Angular components for Warrant",
+  "name": "angular-warrant",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,8 +9,7 @@
     "prepare": "npm run build",
     "test": "ng test"
   },
-  "author": "Warrant <hello@warrant.dev> (https://warrant.dev)",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
     "@angular/common": "^14.2.0",
