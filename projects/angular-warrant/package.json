@@ -1,6 +1,6 @@
 {
   "name": "@warrantdev/angular-warrant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular components for Warrant",
   "author": "Warrant <hello@warrant.dev> (https://warrant.dev)",
   "license": "MIT",
