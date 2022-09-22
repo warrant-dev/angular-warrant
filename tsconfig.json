@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "angular-warrant": [
+      "@warrantdev/angular-warrant": [
         "dist/angular-warrant"
       ]
     },
