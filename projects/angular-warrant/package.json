@@ -10,7 +10,7 @@
     "@angular/core": "^14.2.0"
   },
   "dependencies": {
-    "@warrantdev/warrant-js": "^1.0.0",
+    "@warrantdev/warrant-js": "^1.0.1",
     "tslib": "^2.3.0"
   }
 }
