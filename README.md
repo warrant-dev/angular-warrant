@@ -100,13 +100,7 @@ export class ProductListComponent {
       price: 799,
       description: 'A large phone with one of the best screens',
       warrantCheck: {
-        op: "anyOf",
         warrants: [
-          {
-            objectType: 'role',
-            objectId: 'owner',
-            relation: 'member',
-          },
           {
             objectType: 'item',
             objectId: 'phone_xl',
@@ -128,7 +122,7 @@ export class ProductListComponent {
 **allOf** specifies that the access check request will be authorized if *all of* the warrants are matched and will not be authorized otherwise.
 
 ```javascript
-// User is authorized if they are a 'viewer' of protected_item OR a 'viewer' of 'another_protected_item'
+// User is authorized if they are a 'viewer' of item `protected_item` OR a 'viewer' of store `protected_store`
 export class ProductListComponent {
   products = [
     {
@@ -137,25 +131,16 @@ export class ProductListComponent {
       price: 799,
       description: 'A large phone with one of the best screens',
       warrantCheck: {
+        op: "anyOf",
         warrants: [
           {
             objectType: 'item',
             objectId: 'protected_item',
             relation: 'viewer',
           },
-        ],
-      }
-    },
-    {
-      id: 2,
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras',
-      warrantCheck: {
-        warrants: [
           {
-            objectType: 'item',
-            objectId: 'another_protected_item',
+            objectType: 'store',
+            objectId: 'protected_store',
             relation: 'viewer',
           },
         ],
