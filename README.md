@@ -117,11 +117,13 @@ export class ProductListComponent {
 
 `warrants` contains the list of warrants evaluted to determine if the user has access. If `warrants` contains multiple warrants, the `op` parameter is required and specifies how the list of warrants should be evaluated.
 
-**anyOf** specifies that the access check request will be authorized if *any of* the warrants are matched and will not be authorized otherwise.
+**AnyOf** specifies that the access check request will be authorized if *any of* the warrants are matched and will not be authorized otherwise.
 
-**allOf** specifies that the access check request will be authorized if *all of* the warrants are matched and will not be authorized otherwise.
+**AllOf** specifies that the access check request will be authorized if *all of* the warrants are matched and will not be authorized otherwise.
 
 ```javascript
+import { WarrantCheckOp } from '@warrantdev/angular-warrant';
+
 // User is authorized if they are a 'viewer' of item `protected_item` OR a 'viewer' of store `protected_store`
 export class ProductListComponent {
   products = [
@@ -131,7 +133,7 @@ export class ProductListComponent {
       price: 799,
       description: 'A large phone with one of the best screens',
       warrantCheck: {
-        op: "anyOf",
+        op: WarrantCheckOp.AnyOf,
         warrants: [
           {
             objectType: 'item',
