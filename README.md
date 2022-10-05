@@ -113,6 +113,48 @@ export class ProductListComponent {
 }
 ```
 
+### `WarrantGuard`
+`WarrantGuard` is an Angular route guard you can use to protect your routes behind a warrant. You can pass the warrants to check in the `data` property, which includes support for multiple warrants.
+
+```javascript
+import { WarrantModule, WarrantGuard } from '@warrantdev/angular-warrant';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: ProductListComponent,
+        canActivate: [WarrantGuard],
+        data: {
+          warrantCheck: {
+            warrants: [
+              {
+                objectType: 'role',
+                objectId: 'owner',
+                relation: 'member',
+              },
+            ],
+          },
+        },
+      },
+    ]),
+    WarrantModule.forRoot({
+      clientKey: 'YOUR_CLIENT_KEY',
+    }),
+  ],
+  declarations: [
+    AppComponent,
+    TopBarComponent,
+    ProductListComponent,
+    ProductAlertsComponent,
+  ],
+  bootstrap: [AppComponent],
+})
+```
+
 ## Support for Multiple Warrants
 
 `warrants` contains the list of warrants evaluted to determine if the user has access. If `warrants` contains multiple warrants, the `op` parameter is required and specifies how the list of warrants should be evaluated.
